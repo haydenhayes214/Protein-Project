@@ -5,9 +5,37 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [activeTab, setActiveTab] = useState('home')
 
   return (
     <>
+      <nav className="tabs">
+        <button 
+          className={activeTab === 'home' ? 'tab active' : 'tab'}
+          onClick={() => setActiveTab('home')}
+        >
+          Home
+        </button>
+        <button 
+          className={activeTab === 'proteins' ? 'tab active' : 'tab'}
+          onClick={() => setActiveTab('proteins')}
+        >
+          Proteins
+        </button>
+        <button 
+          className={activeTab === 'brands' ? 'tab active' : 'tab'}
+          onClick={() => setActiveTab('brands')}
+        >
+          Brands
+        </button>
+        <button 
+          className={activeTab === 'compare' ? 'tab active' : 'tab'}
+          onClick={() => setActiveTab('compare')}
+        >
+          Compare
+        </button>
+      </nav>
+
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
